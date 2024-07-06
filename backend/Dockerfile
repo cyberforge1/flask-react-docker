@@ -1,3 +1,5 @@
+# /backend/Dockerfile
+
 # Use the official Python image from the Docker Hub for x86_64 architecture
 FROM --platform=linux/amd64 python:3.8-slim
 
@@ -15,3 +17,4 @@ EXPOSE 5000
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
+
