@@ -1,5 +1,5 @@
-# Use the official Python image from the Docker Hub
-FROM python:3.8-slim
+# Use the official Python image from the Docker Hub for x86_64 architecture
+FROM --platform=linux/amd64 python:3.8-slim
 
 # Set the working directory inside the container
 WORKDIR /app

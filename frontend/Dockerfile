@@ -1,5 +1,5 @@
-# Use the official Node image from the Docker Hub
-FROM node:16
+# Use the official Node image from the Docker Hub for x86_64 architecture
+FROM --platform=linux/amd64 node:16
 
 # Set the working directory
 WORKDIR /app

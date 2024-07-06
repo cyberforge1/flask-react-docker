@@ -1,0 +1,40 @@
+{
+    "family": "my-task-family",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024",
+    "containerDefinitions": [
+      {
+        "name": "backend",
+        "image": "992382723838.dkr.ecr.ap-southeast-2.amazonaws.com/backend-repo:latest",
+        "memoryReservation": 512,
+        "cpu": 256,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 5000,
+            "hostPort": 5000
+          }
+        ]
+      },
+      {
+        "name": "frontend",
+        "image": "992382723838.dkr.ecr.ap-southeast-2.amazonaws.com/frontend-repo:latest",
+        "memoryReservation": 512,
+        "cpu": 256,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "hostPort": 3000
+          }
+        ]
+      }
+    ],
+    "executionRoleArn": "arn:aws:iam::your_account_id:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::your_account_id:role/ecsTaskExecutionRole"
+  }
+  
